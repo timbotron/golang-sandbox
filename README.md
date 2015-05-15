@@ -2,6 +2,12 @@
 
 Where I test out all kinds of stupid stuff!
 
+# Credits
+
+This excellent repo helped me get a vagrant box for go dev really fast:
+
+https://github.com/dcoxall/vagrant-golang
+
 ### License
 
 The MIT License (MIT)
