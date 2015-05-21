@@ -14,8 +14,8 @@ func main() {
 	pa := &a
 	fmt.Println("a len:",len(a))
 	fmt.Println("pa len:",len(*pa))
-	fmt.Println("orig:",a)
-	fmt.Println("pointer:",pa)
+	fmt.Println("orig:",a[0])
+	fmt.Println("pointer:",(*pa)[0])
 	fmt.Println("orig_len:",len(a))
 	fmt.Println("pointer_len:",len(*pa))
 	calcLen := lenfunc(pa)

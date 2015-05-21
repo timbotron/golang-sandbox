@@ -18,10 +18,8 @@ func born(x int, y int) bool {
 	fmt.Printf("Star Count: %d\n", starCount)
 	rand.Seed(seed)
 	starChart := make([]Pin, starCount)
-	starPointer := &starChart
 	for ii := 0; ii < starCount; ii++ {
-		var newPin = genPin(starPointer, x, y)
-		//var newPin = Pin{randInt(-x, x), randInt(-y, y), 1}
+		var newPin = genPin(&starChart, x, y)
 		starChart[ii] = newPin
 	}
 	fmt.Printf("%v\n", starChart)
@@ -31,7 +29,7 @@ func born(x int, y int) bool {
 	fmt.Printf("Star JSON: %s\n", starJSON)
 	return true
 }
-func genPin(pins *[]Pin,x int,y int) Pin { // TODO: figure out slice pointers
+func genPin(pins *[]Pin,x int,y int) Pin { 
 	var newPin = Pin{randInt(-x, x), randInt(-y, y), 1}
 	if isPinUsed(pins,newPin) {
 		newPin = genPin(pins, x, y)
@@ -42,12 +40,12 @@ func genPin(pins *[]Pin,x int,y int) Pin { // TODO: figure out slice pointers
 
 
 func isPinUsed(pins *[]Pin,pin Pin) bool {
-	for ii := 0; ii < len(pins); ii++ {
-		if pins[ii].X == pin.X && pins[ii].Y == pin.Y {
-			return false
+	for ii := 0; ii < len(*pins); ii++ {
+		if (*pins)[ii].X == pin.X && (*pins)[ii].Y == pin.Y {
+			return true
 		}
 	}
-	return true
+	return false
 }
 
 func randInt(min int, max int) int {
@@ -56,5 +54,5 @@ func randInt(min int, max int) int {
 
 func main() {
 
-	born(15, 15)
+	born(100, 100)
 }
