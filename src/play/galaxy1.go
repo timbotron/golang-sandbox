@@ -17,9 +17,10 @@ func born(x int, y int) bool {
 	var starCount = int(float32(x) * float32(y) * 0.05)
 	fmt.Printf("Star Count: %d\n", starCount)
 	rand.Seed(seed)
-	var starChart = make([]Pin, starCount)
+	starChart := make([]Pin, starCount)
+	starPointer := &starChart
 	for ii := 0; ii < starCount; ii++ {
-		var newPin = genPin(&starChart, x, y)
+		var newPin = genPin(starPointer, x, y)
 		//var newPin = Pin{randInt(-x, x), randInt(-y, y), 1}
 		starChart[ii] = newPin
 	}
