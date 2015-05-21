@@ -1,8 +1,9 @@
 package main
 
 import "fmt"
+import "time"
 import "math/rand"
-import "encoding/json"
+//import "encoding/json"
 
 type Pin struct {
 	X int
@@ -14,6 +15,7 @@ var seed = int64(5185441982)
 
 func born(x int, y int) bool {
 	fmt.Println("running..")
+	t0 := time.Now()
 	var starCount = int(float32(x) * float32(y) * 0.05)
 	fmt.Printf("Star Count: %d\n", starCount)
 	rand.Seed(seed)
@@ -22,11 +24,11 @@ func born(x int, y int) bool {
 		var newPin = genPin(&starChart, x, y)
 		starChart[ii] = newPin
 	}
-	fmt.Printf("%v\n", starChart)
-	fmt.Printf("%d\n", len(starChart))
-	starJSON, err := json.Marshal(starChart)
-	fmt.Printf("Errors: %v\n", err)
-	fmt.Printf("Star JSON: %s\n", starJSON)
+	// starJSON, err := json.Marshal(starChart)
+	// fmt.Printf("Errors: %v\n", err)
+	//fmt.Printf("Star JSON: %s\n", starJSON)
+	t1 := time.Now()
+	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
 	return true
 }
 func genPin(pins *[]Pin,x int,y int) Pin { 
@@ -54,5 +56,5 @@ func randInt(min int, max int) int {
 
 func main() {
 
-	born(100, 100)
+	born(2000, 2000)
 }
