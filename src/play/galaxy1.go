@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "time"
 import "math/rand"
-//import "encoding/json"
+import "encoding/json"
 
 type Pin struct {
 	X int
@@ -19,14 +19,14 @@ func born(x int, y int) bool {
 	var starCount = int(float32(x) * float32(y) * 0.05)
 	fmt.Printf("Star Count: %d\n", starCount)
 	rand.Seed(seed)
-	starChart := make([]Pin, starCount)
+	starChart := make([]Pin, 0)
 	for ii := 0; ii < starCount; ii++ {
 		var newPin = genPin(&starChart, x, y)
-		starChart[ii] = newPin
+		starChart = append(starChart, newPin)
+		// starChart[ii] = newPin
 	}
-	// starJSON, err := json.Marshal(starChart)
-	// fmt.Printf("Errors: %v\n", err)
-	//fmt.Printf("Star JSON: %s\n", starJSON)
+	 starJSON, _ := json.Marshal(starChart)
+	fmt.Printf("Star JSON: %s\n", starJSON)
 	t1 := time.Now()
 	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
 	return true
@@ -56,5 +56,5 @@ func randInt(min int, max int) int {
 
 func main() {
 
-	born(2000, 2000)
+	born(1000, 1000)
 }
