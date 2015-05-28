@@ -23,7 +23,6 @@ func born(x int, y int) bool {
 	for ii := 0; ii < starCount; ii++ {
 		var newPin = genPin(&starChart, x, y)
 		starChart = append(starChart, newPin)
-		// starChart[ii] = newPin
 	}
 	 starJSON, _ := json.Marshal(starChart)
 	fmt.Printf("Star JSON: %s\n", starJSON)
