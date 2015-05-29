@@ -1,15 +1,22 @@
 package main
 
 import "fmt"
+import "sort"
 import "time"
 import "math/rand"
-import "encoding/json"
+// import "encoding/json"
 
 type Pin struct {
 	X int
 	Y int
 	T int
 }
+
+type ByX []Pin
+
+func (a ByX) Len() int           { return len(a) }
+func (a ByX) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByX) Less(i, j int) bool { return a[i].X < a[j].X }
 
 var seed = int64(5185441982)
 
@@ -23,9 +30,10 @@ func born(x int, y int) bool {
 	for ii := 0; ii < starCount; ii++ {
 		var newPin = genPin(&starChart, x, y)
 		starChart = append(starChart, newPin)
+		sort.Sort(ByX(starChart))
 	}
-	 starJSON, _ := json.Marshal(starChart)
-	fmt.Printf("Star JSON: %s\n", starJSON)
+	//  starJSON, _ := json.Marshal(starChart)
+	// fmt.Printf("Star JSON: %s\n", starJSON)
 	t1 := time.Now()
 	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
 	return true
@@ -39,6 +47,15 @@ func genPin(pins *[]Pin,x int,y int) Pin {
 	return newPin
 }
 
+// WORKING ONE, want to try w/Divide & Conquer
+// func isPinUsed(pins *[]Pin,pin Pin) bool {
+// 	for ii := 0; ii < len(*pins); ii++ {
+// 		if (*pins)[ii].X == pin.X && (*pins)[ii].Y == pin.Y {
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
 
 func isPinUsed(pins *[]Pin,pin Pin) bool {
 	for ii := 0; ii < len(*pins); ii++ {
@@ -55,5 +72,5 @@ func randInt(min int, max int) int {
 
 func main() {
 
-	born(1000, 1000)
+	born(200, 200)
 }
