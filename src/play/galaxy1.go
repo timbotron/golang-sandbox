@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "time"
 import "math/rand"
- import "encoding/json"
+ // import "encoding/json"
 
 type Pin struct {
 	X int
@@ -17,22 +17,23 @@ func (a ByX) Len() int           { return len(a) }
 func (a ByX) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByX) Less(i, j int) bool { return a[i].X < a[j].X }
 
-var seed = int64(5185441982)
+var seed = int64(19820514)
 
 func born(x int, y int) bool {
 	fmt.Println("running..")
 	t0 := time.Now()
-	var starCount = int(float32(x) * float32(y) * 0.02)
+	var starCount = int(float32(x) * float32(y) * 0.01)
 	fmt.Printf("Star Count: %d\n", starCount)
 	rand.Seed(seed)
 	starChart := make([]Pin, 0)
 	for ii := 0; ii < starCount; ii++ {
-		fmt.Println("Creating Star # ",ii)
+		//fmt.Println("Creating Star # ",ii)
 		var newPin = genPin(&starChart, x, y)
+		fmt.Printf("%d\t%d\n",newPin.X,newPin.Y)
 		starChart = append(starChart, newPin)
 	}
-	  starJSON, _ := json.Marshal(starChart)
-	 fmt.Printf("Star JSON: %s\n", starJSON)
+	// starJSON, _ := json.Marshal(starChart)
+	// fmt.Printf("Star JSON: %s\n", starJSON)
 	t1 := time.Now()
 	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
 	return true
@@ -64,5 +65,5 @@ func randInt(min int, max int) int {
 
 func main() {
 
-	born(50, 50)
+	born(200, 200)
 }
