@@ -40,7 +40,7 @@ func born(x int, y int) bool {
 }
 func genPin(pins *[]Pin,x int,y int) Pin { 
 	var newPin = Pin{randInt(-x, x), randInt(-y, y), 1}
-	if isPinUsed(pins,newPin) {
+	if isPinUsed(pins,newPin,0,len(*pins)) {
 		newPin = genPin(pins, x, y)
 	}
 	
@@ -57,13 +57,24 @@ func genPin(pins *[]Pin,x int,y int) Pin {
 // 	return false
 // }
 
-func isPinUsed(pins *[]Pin,pin Pin) bool {
-	for ii := 0; ii < len(*pins); ii++ {
-		if (*pins)[ii].X == pin.X && (*pins)[ii].Y == pin.Y {
-			return true
+func isPinUsed(pins *[]Pin,pin Pin, min int, max int) bool {
+	diff := (max - min) / 2
+	mid := min + diff
+	//fmt.Printf("%v %d %d %d %d\n", pin, min, max, diff, mid)
+	if diff < 100 {
+		for ii := min; ii < max; ii++ {
+			if (*pins)[ii].X == pin.X && (*pins)[ii].Y == pin.Y {
+				return true
+			}
 		}
+		return false
+	} else if pin.X > (*pins)[mid].X {
+		return isPinUsed(pins,pin,mid,max)
+	} else {
+		return isPinUsed(pins,pin,min,mid)
 	}
-	return false
+
+	return true
 }
 
 func randInt(min int, max int) int {
@@ -72,5 +83,5 @@ func randInt(min int, max int) int {
 
 func main() {
 
-	born(200, 200)
+	born(2000, 2000)
 }
