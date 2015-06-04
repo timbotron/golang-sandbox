@@ -3,7 +3,7 @@ package main
 import "fmt"
 import "time"
 import "math/rand"
- // import "encoding/json"
+// import "encoding/json"
 
 type Pin struct {
 	X int
@@ -11,59 +11,38 @@ type Pin struct {
 	T int
 }
 
-type ByX []Pin
-
-func (a ByX) Len() int           { return len(a) }
-func (a ByX) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a ByX) Less(i, j int) bool { return a[i].X < a[j].X }
-
 var seed = int64(19820514)
 
 func born(x int, y int) bool {
 	fmt.Println("running..")
 	t0 := time.Now()
-	var starCount = int(float32(x) * float32(y) * 0.01)
-	fmt.Printf("Star Count: %d\n", starCount)
 	rand.Seed(seed)
 	starChart := make([]Pin, 0)
-	for ii := 0; ii < starCount; ii++ {
-		//fmt.Println("Creating Star # ",ii)
-		var newPin = genPin(&starChart, x, y)
-		fmt.Printf("%d\t%d\n",newPin.X,newPin.Y)
-		starChart = append(starChart, newPin)
+	for xx := -x; xx < x; xx++ {
+		for yy := -y; yy < y; yy++ {
+			if rand.Intn(99) < 1 {
+				newStar := genStar(xx,yy)
+				//fmt.Printf("%d\t%d\n",newStar.X,newStar.Y)
+
+				starChart = append(starChart,newStar)
+			}
+		}
 	}
 	// starJSON, _ := json.Marshal(starChart)
 	// fmt.Printf("Star JSON: %s\n", starJSON)
+	fmt.Println("Number of stars: ",len(starChart))
 	t1 := time.Now()
 	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
 	return true
 }
-func genPin(pins *[]Pin,x int,y int) Pin { 
-	var newPin = Pin{randInt(-x, x), randInt(-y, y), 1}
-	if isPinUsed(pins,newPin) {
-		newPin = genPin(pins, x, y)
-	}
-	
-	return newPin
-}
 
-//WORKING ONE, want to try w/Divide & Conquer
-func isPinUsed(pins *[]Pin,pin Pin) bool {
-	for ii := 0; ii < len(*pins); ii++ {
-		if (*pins)[ii].X == pin.X && (*pins)[ii].Y == pin.Y {
-			return true
-		}
-	}
-	return false
-}
-
-
-
-func randInt(min int, max int) int {
-	return min + rand.Intn(max-min)
+func genStar(x int, y int) Pin {
+	// gen planet type
+	t := 1
+	return Pin{x, y, t}
 }
 
 func main() {
 
-	born(200, 200)
+	born(100, 100)
 }
