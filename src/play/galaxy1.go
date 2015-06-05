@@ -6,14 +6,14 @@ import "math/rand"
 // import "encoding/json"
 
 type Pin struct {
-	X int
-	Y int
-	T int
+	X int16
+	Y int16
+	T uint8
 }
 
 var seed = int64(19820514)
 
-func born(x int, y int) bool {
+func born(x int16, y int16) bool {
 	fmt.Println("running..")
 	t0 := time.Now()
 	rand.Seed(seed)
@@ -36,9 +36,10 @@ func born(x int, y int) bool {
 	return true
 }
 
-func genStar(x int, y int) Pin {
+func genStar(x int16, y int16) Pin {
 	// gen planet type
-	t := 1
+	var t uint8
+	t = 1
 	return Pin{x, y, t}
 }
 
