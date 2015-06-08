@@ -1,0 +1,34 @@
+--- # Galaxy Alpha parser: http://yaml-online-parser.appspot.com/
+name: Thors Cradle
+sector_size: 32
+cradle_size: 10
+
+aliens:
+   - gov_name: Dwarven Alliance
+     race_single: dwarf
+     race_plural: dwarves
+     race_ownership: dwarven
+     sectors_of_control: 3
+     in_cradle: 1
+     style: blocky
+     stats:
+     - CMD: 50
+       PIL: 50
+       NAV: 50
+       ENG: 60
+       WEP: 60
+       LUK: 01
+   - gov_name: Human Federation
+     race_single: human
+     race_plural: humans
+     race_ownership: federation
+     sectors_of_control: 1
+     in_cradle: 1
+     style: sleek
+     stats:
+     - CMD: 50
+       PIL: 50
+       NAV: 50
+       ENG: 50
+       WEP: 50
+       LUK: 05
