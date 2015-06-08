@@ -17,6 +17,7 @@ aliens:
        NAV: 50
        ENG: 60
        WEP: 60
+       SEN: 50
        LUK: 01
    - gov_name: Human Federation
      race_single: human
@@ -31,4 +32,5 @@ aliens:
        NAV: 50
        ENG: 50
        WEP: 50
+       SEN: 50
        LUK: 05
