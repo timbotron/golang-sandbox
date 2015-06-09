@@ -3,27 +3,33 @@ name: Thors Cradle
 sector_size: 32
 cradle_size: 10
 
+ship_layouts:
+    - class: personal
+      weapon_mounts_max: 3 
+    - class: frigate
+    - class: destroyer
+
 aliens:
-   - gov_name: Dwarven Alliance
+   - gov_name: Dwarven Federation
      race_single: dwarf
      race_plural: dwarves
-     race_ownership: dwarven
-     sectors_of_control: 3
+     race_ownership: federation
+     sectors_of_control: 2
      in_cradle: 1
      style: blocky
      stats:
      - CMD: 50
        PIL: 50
-       NAV: 50
+       NAV: 40
        ENG: 60
        WEP: 60
-       SCI: 50
+       SCI: 40
        LUK: 01
-   - gov_name: Human Federation
+   - gov_name: Terran Empire
      race_single: human
      race_plural: humans
-     race_ownership: federation
-     sectors_of_control: 1
+     race_ownership: empire
+     sectors_of_control: 2
      in_cradle: 1
      style: sleek
      stats:
@@ -34,3 +40,33 @@ aliens:
        WEP: 50
        SCI: 50
        LUK: 05
+   - gov_name: Elven Enclave
+     race_single: elf
+     race_plural: elves
+     race_ownership: enclave
+     sectors_of_control: 2
+     in_cradle: 1
+     style: sleek
+     stats:
+     - CMD: 35
+       PIL: 60
+       NAV: 50
+       ENG: 50
+       WEP: 50
+       SCI: 65
+       LUK: 02
+   - gov_name: Gnomish Systems
+     race_single: gnome
+     race_plural: gnomes
+     race_ownership: gnosys
+     sectors_of_control: 2
+     in_cradle: 1
+     style: blocky
+     stats:
+     - CMD: 50
+       PIL: 60
+       NAV: 60
+       ENG: 50
+       WEP: 50
+       SCI: 50
+       LUK: 06
