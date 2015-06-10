@@ -1,0 +1,99 @@
+{
+  "cradle_size": 10, 
+  "sector_size": 32, 
+  "ship_layouts": [
+    {
+      "weapon_mounts_max": 3, 
+      "class": "personal"
+    }, 
+    {
+      "class": "frigate"
+    }, 
+    {
+      "class": "destroyer"
+    }
+  ], 
+  "aliens": [
+    {
+      "style": "blocky", 
+      "sectors_of_control": 2, 
+      "stats": [
+        {
+          "WEP": 60, 
+          "PIL": 50, 
+          "ENG": 60, 
+          "LUK": 1, 
+          "NAV": 40, 
+          "CMD": 50, 
+          "SCI": 40
+        }
+      ], 
+      "race_ownership": "federation", 
+      "gov_name": "Dwarven Federation", 
+      "race_plural": "dwarves", 
+      "race_single": "dwarf", 
+      "in_cradle": 1
+    }, 
+    {
+      "style": "sleek", 
+      "sectors_of_control": 2, 
+      "stats": [
+        {
+          "WEP": 50, 
+          "PIL": 50, 
+          "ENG": 50, 
+          "LUK": 5, 
+          "NAV": 50, 
+          "CMD": 50, 
+          "SCI": 50
+        }
+      ], 
+      "race_ownership": "empire", 
+      "gov_name": "Terran Empire", 
+      "race_plural": "humans", 
+      "race_single": "human", 
+      "in_cradle": 1
+    }, 
+    {
+      "style": "sleek", 
+      "sectors_of_control": 2, 
+      "stats": [
+        {
+          "WEP": 50, 
+          "PIL": 60, 
+          "ENG": 50, 
+          "LUK": 2, 
+          "NAV": 50, 
+          "CMD": 35, 
+          "SCI": 65
+        }
+      ], 
+      "race_ownership": "enclave", 
+      "gov_name": "Elven Enclave", 
+      "race_plural": "elves", 
+      "race_single": "elf", 
+      "in_cradle": 1
+    }, 
+    {
+      "style": "blocky", 
+      "sectors_of_control": 2, 
+      "stats": [
+        {
+          "WEP": 50, 
+          "PIL": 60, 
+          "ENG": 50, 
+          "LUK": 6, 
+          "NAV": 60, 
+          "CMD": 50, 
+          "SCI": 50
+        }
+      ], 
+      "race_ownership": "gnosys", 
+      "gov_name": "Gnomish Systems", 
+      "race_plural": "gnomes", 
+      "race_single": "gnome", 
+      "in_cradle": 1
+    }
+  ], 
+  "name": "Thors Cradle"
+}
