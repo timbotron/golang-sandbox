@@ -1,7 +1,9 @@
 --- # Galaxy Alpha parser: http://yaml-online-parser.appspot.com/
 name: Thors Cradle
 sector_size: 32
-cradle_size: 10
+min_stars_per_sector: 5
+max_stars_per_sector: 35
+cradle_size: 30
 
 ship_layouts:
     - class: personal

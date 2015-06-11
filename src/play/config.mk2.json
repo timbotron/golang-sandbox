@@ -1,6 +1,8 @@
 {
-  "cradle_size": 10, 
+  "cradle_size": 30, 
   "sector_size": 32, 
+  "name": "Thors Cradle", 
+  "max_stars_per_sector": 35, 
   "ship_layouts": [
     {
       "weapon_mounts_max": 3, 
@@ -13,6 +15,7 @@
       "class": "destroyer"
     }
   ], 
+  "min_stars_per_sector": 5, 
   "aliens": [
     {
       "style": "blocky", 
@@ -94,6 +97,5 @@
       "race_single": "gnome", 
       "in_cradle": 1
     }
-  ], 
-  "name": "Thors Cradle"
+  ]
 }
