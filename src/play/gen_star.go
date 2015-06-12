@@ -18,6 +18,7 @@ type st struct {
 
 func gen_map() map[string]st {
 	// we are going to generate all of the startypes
+	// Data: https://en.wikipedia.org/wiki/Stellar_classification#Harvard_spectral_classification
 
 	r := make(map[string]st)
 
