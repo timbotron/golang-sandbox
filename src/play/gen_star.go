@@ -16,14 +16,14 @@ type st struct {
 	max_l float32
 }
 
-func gen_map() map[string]st {
+func gen_map() [6]st {
 	// we are going to generate all of the startypes
 	// Data: https://en.wikipedia.org/wiki/Stellar_classification#Harvard_spectral_classification
 
-	r := make(map[string]st)
+	var r [6]st
 
 	
-	r["b"] = st{cls: "b",
+	r[0] = st{cls: "B",
 				min_t: 100,
 				max_t: 300,
 				color: "deep blue white",
@@ -33,7 +33,7 @@ func gen_map() map[string]st {
 				max_r: 6.6,
 				min_l: 25,
 				max_l: 30000}
-	r["a"] = st{cls: "a",
+	r[1] = st{cls: "A",
 				min_t: 75,
 				max_t: 100,
 				color: "blue white",
@@ -43,7 +43,7 @@ func gen_map() map[string]st {
 				max_r: 1.8,
 				min_l: 5,
 				max_l: 25}
-	r["f"] = st{cls: "f",
+	r[2] = st{cls: "F",
 				min_t: 60,
 				max_t: 75,
 				color: "white",
@@ -53,7 +53,7 @@ func gen_map() map[string]st {
 				max_r: 1.4,
 				min_l: 1.5,
 				max_l: 5}
-	r["g"] = st{cls: "g",
+	r[3] = st{cls: "G",
 				min_t: 52,
 				max_t: 60,
 				color: "yellowish white",
@@ -63,7 +63,7 @@ func gen_map() map[string]st {
 				max_r: 1.15,
 				min_l: 0.6,
 				max_l: 1.5}
-	r["k"] = st{cls: "k",
+	r[4] = st{cls: "K",
 				min_t: 37,
 				max_t: 52,
 				color: "pale yellow orange",
@@ -73,7 +73,7 @@ func gen_map() map[string]st {
 				max_r: 0.96,
 				min_l: 0.08,
 				max_l: 0.6}
-	r["m"] = st{cls: "m",
+	r[5] = st{cls: "M",
 				min_t: 24,
 				max_t: 37,
 				color: "light orange red",
@@ -86,12 +86,12 @@ func gen_map() map[string]st {
 	return r
 }
 
-func gen_star(m map[string]st) {
+func gen_star(m [6]st) {
 	//var r uint16
 	//r = rand.Intn(10000)
 	fmt.Printf("%v\n",m)
-	fmt.Printf("%v\n",m["g"])
-	fmt.Printf("%v\n",m["g"].color)
+	fmt.Printf("%v\n",m[2])
+	fmt.Printf("%v\n",m[2].color)
 }
 
 func main() {
