@@ -2,20 +2,26 @@ package main
 
 import "fmt"
 //import "time"
-// import "math/rand"
+import "math/rand"
 import "encoding/json"
 import "io/ioutil"
 //
-// type Pin struct {
-// 	X int16
-// 	Y int16
-// 	T uint8
-// }
+type Pin struct {
+	SX int16
+	SY int16
+	X uint16
+	Y uint16
+	C uint16
+}
 //
 // // NEEDS LOTSA WORK
 //
-// var seed = int64(19820514)
+var seed = int64(19820514)
 //
+
+func randInt(min int, max int) int {
+	return min + rand.Intn(max-min)
+}
 
 func matrix(x, y int) [][]uint8 {
 	mat := make([]uint8, x*y)
@@ -34,34 +40,58 @@ func resetMatrix(t [][]uint8,l int) [][]uint8 {
   }
   return t
 }
+
+func genPin(scratch *[][]uint8,l int) Pin {
+	var newPin = Pin{rand.Intn(l), rand.Intn(l), 1}
+
+	for xx := -l; xx < l; xx++ {
+		for yy := -l; yy < l; yy++ {
+			if (*scratch)[xx][yy] != 1 {
+				// TODO now we need to then check neighbors. You can do it! Keep adding ifs, no more loop needed
+			}
+		}
+	}
+
+	return newPin
+}
+
 func born(config map[string]interface{}) bool {
 	fmt.Println("running..")
-	s := int(config["cradle_size"].(float64))
-	scratch := matrix(s,s)
+	ss := int(config["sector_size"].(float64))
+	cs := int(config["cradle_size"].(float64))
+	min := int(config["min_stars_per_sector"].(float64))
+	max := int(config["max_stars_per_sector"].(float64))
+	md := int(config["min_star_distance"].(float64))
+	var ns int
+	scratch := matrix(ss,ss)
 
 	fmt.Println(scratch)
 	// t0 := time.Now()
-	// rand.Seed(seed)
-	// starChart := make([]Pin, 0)
-	// for xx := -config["cradle_size"]; xx < config["cradle_size"]; xx++ {
-	// 	for yy := -config["cradle_size"]; yy < config["cradle_size"]; yy++ {
-	// 		// Now we are creating a sector!
-	// 			fmt.Println("Generating Sector: %i, %i",xx,yy)
-	//
-	// 		// We create a blank multideminsional array to hold the data in addition to storing it in starChart, so we can easily make sure neighboring stars are not an issue
-	//
-	// 		// rand to find the num of stars in the sector, between the min and max
-	//
-	// 		// loop x times, discarding star and retrying if it fails the neighbor test.
-	//
+	rand.Seed(seed)
+	starChart := make([]Pin, 0)
+	for xx := -cs; xx < cs; xx++ {
+		for yy := -cs; yy < cs; yy++ {
+			// Now we are creating a sector!
+			// We create a blank multideminsional array to hold the data in addition to storing it in starChart, so we can easily make sure neighboring stars are not an issue
+			scratch = resetMatrix(scratch,ss)
+			// rand to find the num of stars in the sector, between the min and max
+			ns = randInt(min,max)
+
+			fmt.Println(ns)
+
+			// loop x times, discarding star and retrying if it fails the neighbor test.
+			for aa := 0; aa < ns; aa++ {
+				var newPin = genPin(&scratch,ss)
+
+			}
+
 	// 		// if rand.Intn(99) < 1 {
-	// 		// 	newStar := genStar(xx,yy)
 	// 		// 	//fmt.Printf("%d\t%d\n",newStar.X,newStar.Y)
 	// 		//
 	// 		// 	starChart = append(starChart,newStar)
 	// 		// }
-	// 	}
-	// }
+		}
+	}
 	// starJSON, _ := json.Marshal(starChart)
 	// fmt.Printf("Star JSON: %s\n", starJSON)
 	// fmt.Println("Number of stars: ",len(starChart))
