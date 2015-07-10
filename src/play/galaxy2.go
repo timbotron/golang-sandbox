@@ -42,11 +42,11 @@ func resetMatrix(t [][]uint8,l int) [][]uint8 {
 }
 
 func genPin(scratch *[][]uint8,l int,md int) Pin {
-	var newPin = Pin{0,0,rand.Intn(l), rand.Intn(l), 1}
+	var newPin = Pin{0,0,uint8(rand.Intn(l)), uint8(rand.Intn(l)), 1}
 
-	for xx := (newPin.X - md); xx < (newPin.X + md); xx++ {
-		for yy := (newPin.X - md); yy < (newPin.X + md); yy++ {
-			if(xx >= 0 && xx <= l && yy >= 0 && yy <= l && (*scratch)[xx][yy] != 1) {
+	for xx := (int(newPin.X) - md); xx < (int(newPin.X) + md); xx++ {
+		for yy := (int(newPin.Y) - md); yy < (int(newPin.Y) + md); yy++ {
+			if(xx < 0 && xx > l && yy < 0 && yy > l && (*scratch)[xx][yy] == 1) {
 				return genPin(scratch,l,md);
 			}
 		}
@@ -82,9 +82,9 @@ func born(config map[string]interface{}) bool {
 			// loop x times, discarding star and retrying if it fails the neighbor test.
 			for aa := 0; aa < ns; aa++ {
 				var newPin = genPin(&scratch,ss,md)
-				newPin.SX = xx
-				newPin.SY = yy
-				scratch = append(scratch,newPin)
+				newPin.SX = int16(xx)
+				newPin.SY = int16(yy)
+				scratch[newPin.X][newPin.Y] = 1
 				starChart = append(starChart,newPin)
 
 			}
