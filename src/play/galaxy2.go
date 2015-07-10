@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-//import "time"
+import "time"
 import "math/rand"
 import "encoding/json"
 import "io/ioutil"
@@ -66,11 +66,11 @@ func born(config map[string]interface{}) bool {
 	scratch := matrix(ss,ss)
 
 	fmt.Println(scratch)
-	// t0 := time.Now()
+	t0 := time.Now()
 	rand.Seed(seed)
 	starChart := make([]Pin, 0)
-	for xx := -cs; xx < cs; xx++ {
-		for yy := -cs; yy < cs; yy++ {
+	for xx := -cs; xx <= cs; xx++ {
+		for yy := -cs; yy <= cs; yy++ {
 			// Now we are creating a sector!
 			// We create a blank multideminsional array to hold the data in addition to storing it in starChart, so we can easily make sure neighboring stars are not an issue
 			scratch = resetMatrix(scratch,ss)
@@ -92,21 +92,15 @@ func born(config map[string]interface{}) bool {
 		}
 	}
 	fmt.Println("Last Sector: ",scratch)
-	fmt.Println("All Stars: ",starChart)
+	//fmt.Println("All Stars: ",starChart)
 	// starJSON, _ := json.Marshal(starChart)
 	// fmt.Printf("Star JSON: %s\n", starJSON)
-	// fmt.Println("Number of stars: ",len(starChart))
-	// t1 := time.Now()
-	// fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
+	fmt.Println("Number of stars: ",len(starChart))
+	t1 := time.Now()
+	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
 	return true
 }
-//
-// func genStar(x int16, y int16) Pin {
-// 	// gen planet type
-// 	var t uint8
-// 	t = 1
-// 	return Pin{x, y, t}
-// }
+
 
 func main() {
 	// read in config
