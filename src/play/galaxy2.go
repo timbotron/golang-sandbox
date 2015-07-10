@@ -46,11 +46,7 @@ func genPin(scratch *[][]uint8,l int,md int) Pin {
 
 	for xx := (newPin.X - md); xx < (newPin.X + md); xx++ {
 		for yy := (newPin.X - md); yy < (newPin.X + md); yy++ {
-			if(xx >= 0
-				&& xx <= l
-				&& yy >= 0
-				&& yy <= l
-				&& (*scratch)[xx][yy] != 1) {
+			if(xx >= 0 && xx <= l && yy >= 0 && yy <= l && (*scratch)[xx][yy] != 1) {
 				return genPin(scratch,l,md);
 			}
 		}
@@ -95,8 +91,8 @@ func born(config map[string]interface{}) bool {
 
 		}
 	}
-	fmt.Println('Last Sector: ',scratch)
-	fmt.Println('All Stars: ',starChart)
+	fmt.Println("Last Sector: ",scratch)
+	fmt.Println("All Stars: ",starChart)
 	// starJSON, _ := json.Marshal(starChart)
 	// fmt.Printf("Star JSON: %s\n", starJSON)
 	// fmt.Println("Number of stars: ",len(starChart))
