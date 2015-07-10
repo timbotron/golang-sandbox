@@ -9,8 +9,8 @@ import "io/ioutil"
 type Pin struct {
 	SX int16
 	SY int16
-	X uint16
-	Y uint16
+	X uint8
+	Y uint8
 	C uint16
 }
 //
@@ -41,13 +41,17 @@ func resetMatrix(t [][]uint8,l int) [][]uint8 {
   return t
 }
 
-func genPin(scratch *[][]uint8,l int) Pin {
-	var newPin = Pin{rand.Intn(l), rand.Intn(l), 1}
+func genPin(scratch *[][]uint8,l int,md int) Pin {
+	var newPin = Pin{0,0,rand.Intn(l), rand.Intn(l), 1}
 
-	for xx := -l; xx < l; xx++ {
-		for yy := -l; yy < l; yy++ {
-			if (*scratch)[xx][yy] != 1 {
-				// TODO now we need to then check neighbors. You can do it! Keep adding ifs, no more loop needed
+	for xx := (newPin.X - md); xx < (newPin.X + md); xx++ {
+		for yy := (newPin.X - md); yy < (newPin.X + md); yy++ {
+			if(xx >= 0
+				&& xx <= l
+				&& yy >= 0
+				&& yy <= l
+				&& (*scratch)[xx][yy] != 1) {
+				return genPin(scratch,l,md);
 			}
 		}
 	}
@@ -81,17 +85,18 @@ func born(config map[string]interface{}) bool {
 
 			// loop x times, discarding star and retrying if it fails the neighbor test.
 			for aa := 0; aa < ns; aa++ {
-				var newPin = genPin(&scratch,ss)
+				var newPin = genPin(&scratch,ss,md)
+				newPin.SX = xx
+				newPin.SY = yy
+				scratch = append(scratch,newPin)
+				starChart = append(starChart,newPin)
 
 			}
 
-	// 		// if rand.Intn(99) < 1 {
-	// 		// 	//fmt.Printf("%d\t%d\n",newStar.X,newStar.Y)
-	// 		//
-	// 		// 	starChart = append(starChart,newStar)
-	// 		// }
 		}
 	}
+	fmt.Println('Last Sector: ',scratch)
+	fmt.Println('All Stars: ',starChart)
 	// starJSON, _ := json.Marshal(starChart)
 	// fmt.Printf("Star JSON: %s\n", starJSON)
 	// fmt.Println("Number of stars: ",len(starChart))
