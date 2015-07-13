@@ -44,9 +44,26 @@ func resetMatrix(t [][]uint8,l int) [][]uint8 {
 func genPin(scratch *[][]uint8,l int,md int) Pin {
 	var newPin = Pin{0,0,uint8(rand.Intn(l)), uint8(rand.Intn(l)), 1}
 
-	for xx := (int(newPin.X) - md); xx < (int(newPin.X) + md); xx++ {
-		for yy := (int(newPin.Y) - md); yy < (int(newPin.Y) + md); yy++ {
-			if(xx < 0 && xx > l && yy < 0 && yy > l && (*scratch)[xx][yy] == 1) {
+	var bX = int(newPin.X) - md
+	if bX < 0 {
+		bX = 0
+	}
+	var tX = int(newPin.X) + md
+	if tX > l {
+		tX = l
+	}
+	var bY = int(newPin.Y) - md
+	if bY < 0 {
+		bY = 0
+	}
+	var tY = int(newPin.Y) + md
+	if tY > l {
+		tY = l
+	}
+
+	for xx := bX; xx < tX; xx++ {
+		for yy := bY; yy < tY; yy++ {
+			if (*scratch)[xx][yy] == 1 {
 				return genPin(scratch,l,md);
 			}
 		}
