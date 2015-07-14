@@ -16,7 +16,7 @@ type Pin struct {
 //
 // // NEEDS LOTSA WORK
 //
-var seed = int64(19820514)
+var seed = int64(20150514)
 //
 
 func randInt(min int, max int) int {
@@ -72,6 +72,24 @@ func genPin(scratch *[][]uint8,l int,md int) Pin {
 	return newPin
 }
 
+func genStar() uint16 {
+	r := rand.Intn(10000)
+
+	if r <= 13 {
+		return 0
+	} else if r <= 60 {
+		return 1
+	} else if r <= 300 {
+		return 2
+	} else if r <= 760 {
+		return 3
+	} else if r <= 1210 {
+		return 4
+	} else {
+		return 5
+	}
+}
+
 func born(config map[string]interface{}) bool {
 	fmt.Println("running..")
 	ss := int(config["sector_size"].(float64))
@@ -82,7 +100,6 @@ func born(config map[string]interface{}) bool {
 	var ns int
 	scratch := matrix(ss,ss)
 
-	fmt.Println(scratch)
 	t0 := time.Now()
 	rand.Seed(seed)
 	starChart := make([]Pin, 0)
@@ -93,14 +110,13 @@ func born(config map[string]interface{}) bool {
 			scratch = resetMatrix(scratch,ss)
 			// rand to find the num of stars in the sector, between the min and max
 			ns = randInt(min,max)
-
-			fmt.Println(ns)
-
 			// loop x times, discarding star and retrying if it fails the neighbor test.
 			for aa := 0; aa < ns; aa++ {
 				var newPin = genPin(&scratch,ss,md)
 				newPin.SX = int16(xx)
 				newPin.SY = int16(yy)
+				newPin.C = genStar()
+				fmt.Println(newPin.C)
 				scratch[newPin.X][newPin.Y] = 1
 				starChart = append(starChart,newPin)
 
@@ -108,7 +124,7 @@ func born(config map[string]interface{}) bool {
 
 		}
 	}
-	fmt.Println("Last Sector: ",scratch)
+	fmt.Println("Last Sector: \n",scratch)
 	//fmt.Println("All Stars: ",starChart)
 	// starJSON, _ := json.Marshal(starChart)
 	// fmt.Printf("Star JSON: %s\n", starJSON)

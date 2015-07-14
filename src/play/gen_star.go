@@ -16,13 +16,17 @@ type st struct {
 	max_l float32
 }
 
+func randInt(min int, max int) int {
+	return min + rand.Intn(max-min)
+}
+
 func gen_map() [6]st {
 	// we are going to generate all of the startypes
 	// Data: https://en.wikipedia.org/wiki/Stellar_classification#Harvard_spectral_classification
 
 	var r [6]st
 
-	
+
 	r[0] = st{cls: "B",
 				min_t: 100,
 				max_t: 300,
