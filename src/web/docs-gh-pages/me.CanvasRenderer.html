@@ -1,0 +1,4595 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>melonJS Class: CanvasRenderer</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html"><img src="images/melon.png" height="30" ></a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="external-Array.html">Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Error.html">Error</a>
+						</li>
+						
+						<li>
+							<a href="external-Event.html">Event</a>
+						</li>
+						
+						<li>
+							<a href="external-Float32Array.html">Float32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Function.html">Function</a>
+						</li>
+						
+						<li>
+							<a href="external-Number.html">Number</a>
+						</li>
+						
+						<li>
+							<a href="external-Object.html">Object</a>
+						</li>
+						
+						<li>
+							<a href="external-String.html">String</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint8Array.html">Uint8Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint16Array.html">Uint16Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint32Array.html">Uint32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-window.html">window</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.html">me</a>
+						</li>
+						
+						<li>
+							<a href="me.agent.html">me.agent</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.html">me.audio</a>
+						</li>
+						
+						<li>
+							<a href="me.collision.html">me.collision</a>
+						</li>
+						
+						<li>
+							<a href="me.device.html">me.device</a>
+						</li>
+						
+						<li>
+							<a href="me.event.html">me.event</a>
+						</li>
+						
+						<li>
+							<a href="me.game.html">me.game</a>
+						</li>
+						
+						<li>
+							<a href="me.input.html">me.input</a>
+						</li>
+						
+						<li>
+							<a href="me.levelDirector.html">me.levelDirector</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.html">me.loader</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.html">me.plugin</a>
+						</li>
+						
+						<li>
+							<a href="me.pool.html">me.pool</a>
+						</li>
+						
+						<li>
+							<a href="me.save.html">me.save</a>
+						</li>
+						
+						<li>
+							<a href="me.state.html">me.state</a>
+						</li>
+						
+						<li>
+							<a href="me.sys.html">me.sys</a>
+						</li>
+						
+						<li>
+							<a href="me.timer.html">me.timer</a>
+						</li>
+						
+						<li>
+							<a href="me.utils.html">me.utils</a>
+						</li>
+						
+						<li>
+							<a href="me.video.html">me.video</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.AnimationSheet.html">me.AnimationSheet</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.Error.html">me.audio.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.BitmapFont.html">me.BitmapFont</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.html">me.Body</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.Error.html">me.Body.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.CanvasRenderer.html">me.CanvasRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.CollectableEntity.html">me.CollectableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.html">me.Color</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.Error.html">me.Color.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.ColorLayer.html">me.ColorLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.html">me.Container</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.Error.html">me.Container.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.DraggableEntity.html">me.DraggableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.DroptargetEntity.html">me.DroptargetEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Ellipse.html">me.Ellipse</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.html">me.Entity</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.Error.html">me.Entity.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Error.html">me.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Font.html">me.Font</a>
+						</li>
+						
+						<li>
+							<a href="me.GUI_Object.html">me.GUI_Object</a>
+						</li>
+						
+						<li>
+							<a href="me.ImageLayer.html">me.ImageLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.LevelEntity.html">me.LevelEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.html">me.Line</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.Error.html">me.Line.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.Error.html">me.loader.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Matrix2d.html">me.Matrix2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.Error.html">me.ObservableVector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Particle.html">me.Particle</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleContainer.html">me.ParticleContainer</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitter.html">me.ParticleEmitter</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitterSettings.html">me.ParticleEmitterSettings</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.Base.html">me.plugin.Base</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.html">me.Polygon</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.Error.html">me.Polygon.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.QuadTree.html">me.QuadTree</a>
+						</li>
+						
+						<li>
+							<a href="me.Rect.html">me.Rect</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.html">me.Renderable</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.Error.html">me.Renderable.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderer.html">me.Renderer</a>
+						</li>
+						
+						<li>
+							<a href="me.ScreenObject.html">me.ScreenObject</a>
+						</li>
+						
+						<li>
+							<a href="me.Sprite.html">me.Sprite</a>
+						</li>
+						
+						<li>
+							<a href="me.Tile.html">me.Tile</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXLayer.html">me.TMXLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObject.html">me.TMXObject</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObjectGroup.html">me.TMXObjectGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileMap.html">me.TMXTileMap</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.html">me.TMXTileset</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.Error.html">me.TMXTileset.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTilesetGroup.html">me.TMXTilesetGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.html">me.Tween</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.Error.html">me.Tween.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.html">me.Vector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.Error.html">me.Vector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.Error.html">me.video.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.html">me.video.renderer.Texture</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.Error.html">me.video.renderer.Texture.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Viewport.html">me.Viewport</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.html">me.WebGLRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.Compositor.html">me.WebGLRenderer.Compositor</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Class: CanvasRenderer</h1>
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="me.html">me</a>.</span>
+    
+    CanvasRenderer
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+<dt>
+    <h4 class="name toc-target" id="CanvasRenderer"><span class="type-signature"></span>new CanvasRenderer<span class="signature">(canvas, width, height, <span class="optional">options</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        a canvas renderer object
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>canvas</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Canvas</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The html canvas tag to draw to on screen.</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The width of the canvas without scaling</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The height of the canvas without scaling</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The renderer parameters
+                <h6>Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>doubleBuffering</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether to enable double buffering</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>antiAlias</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether to enable anti-aliasing</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>transparent</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether to enable transparency on the canvas (performance hit when enabled)</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>zoomX</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    width
+                
+                </td>
+            
+
+            <td class="description last">The actual width of the canvas with scaling applied</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>zoomY</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    height
+                
+                </td>
+            
+
+            <td class="description last">The actual height of the canvas with scaling applied</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+            </td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 26
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        <ul>
+            <li><a href="me.Renderer.html">me.Renderer</a></li>
+        </ul>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name toc-target" id="blitSurface"><span class="type-signature">&lt;static> </span>blitSurface<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        render the main framebuffer on screen
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 77
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="clearSurface"><span class="type-signature">&lt;static> </span>clearSurface<span class="signature">(<span class="optional">ctx</span>, color, <span class="optional">opaque</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clear the specified context with the given color
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>ctx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Context2d</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">Canvas context, defaults to system context if falsy.</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Color.html">me.Color</a></span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">CSS color.</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>opaque</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Allow transparency [default] or clear the surface completely [true]</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 94
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="drawImage"><span class="type-signature">&lt;static> </span>drawImage<span class="signature">(image, sx, sy, sw, sh, dx, dy, dw, dh)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Draw an image using the canvas api
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">image</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Source image</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>sx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Source x-coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>sy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Source y-coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>sw</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Source width</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>sh</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Source height</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Destination x-coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Destination y-coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dw</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Destination width</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>dh</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Destination height</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 116
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Can be used in three ways:renderer.drawImage(image, dx, dy);renderer.drawImage(image, dx, dy, dw, dh);renderer.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);&#x2F;&#x2F; dx, dy, dw, dh being the destination target &amp; dimensions. sx, sy, sw, sh being the position &amp; dimensions to take from the image</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="drawShape"><span class="type-signature">&lt;static> </span>drawShape<span class="signature">(shape)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        draw the given shape
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>shape</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Rect.html">me.Rect</a></span>
+|
+
+<span class="param-type"><a href="me.Polygon.html">me.Polygon</a></span>
+|
+
+<span class="param-type"><a href="me.Line.html">me.Line</a></span>
+|
+
+<span class="param-type"><a href="me.Ellipse.html">me.Ellipse</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a shape object</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 411
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="fillArc"><span class="type-signature">&lt;static> </span>fillArc<span class="signature">(x, y, radius, start, end, <span class="optional">antiClockwise</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Fill an arc at the specified coordinates with given radius, start and end points
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">arc center point x-axis</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">arc center point y-axis</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">start angle in radians</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">end angle in radians</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>antiClockwise</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">draw arc anti-clockwise</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 141
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="fillRect"><span class="type-signature">&lt;static> </span>fillRect<span class="signature">(x, y, width, height)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Draw a filled rectangle at the specified coordinates
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 163
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="getContext"><span class="type-signature">&lt;static> </span>getContext<span class="signature">()</span><span class="type-signature"> &rarr; {Context2d}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return a reference to the system 2d Context
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 177
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Context2d</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="multiplyMatrix"><span class="type-signature">&lt;static> </span>multiplyMatrix<span class="signature">(mat2d)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Multiply given matrix into the renderer tranformation matrix
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>mat2d</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Matrix2d.html">me.Matrix2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Matrix to transform by</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 449
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="prepareSurface"><span class="type-signature">&lt;static> </span>prepareSurface<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        prepare the framebuffer for drawing a new frame
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 65
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="resetTransform"><span class="type-signature">&lt;static> </span>resetTransform<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        resets the canvas transform to identity
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 188
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="restore"><span class="type-signature">&lt;static> </span>restore<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        restores the canvas context
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 232
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="rotate"><span class="type-signature">&lt;static> </span>rotate<span class="signature">(angle)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        rotates the canvas context
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>angle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">in radians</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 243
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="save"><span class="type-signature">&lt;static> </span>save<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        save the canvas context
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 222
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="scale"><span class="type-signature">&lt;static> </span>scale<span class="signature">(x, y)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        scales the canvas context
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 254
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="scaleCanvas"><span class="type-signature">&lt;static> </span>scaleCanvas<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        scales the canvas & 2d Context
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 198
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="setColor"><span class="type-signature">&lt;static> </span>setColor<span class="signature">(color)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sets the fill & stroke style colors for the context.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Color.html">me.Color</a></span>
+|
+
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">css color value</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 266
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="setGlobalAlpha"><span class="type-signature">&lt;static> </span>setGlobalAlpha<span class="signature">(alpha)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Sets the global alpha on the canvas context
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>alpha</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">0.0 to 1.0 values accepted.</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 282
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="setLineWidth"><span class="type-signature">&lt;static> </span>setLineWidth<span class="signature">(width)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        sets the line width on the context
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Line width</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 293
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="strokeArc"><span class="type-signature">&lt;static> </span>strokeArc<span class="signature">(x, y, radius, start, end, <span class="optional">antiClockwise</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Stroke an arc at the specified coordinates with given radius, start and end points
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">arc center point x-axis</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">arc center point y-axis</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">start angle in radians</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">end angle in radians</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>antiClockwise</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">draw arc anti-clockwise</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 304
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="strokeEllipse"><span class="type-signature">&lt;static> </span>strokeEllipse<span class="signature">(x, y, w, h)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Stroke an ellipse at the specified coordinates with given radius, start and end points
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">arc center point x-axis</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">arc center point y-axis</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>w</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">horizontal radius of the ellipse</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>h</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">vertical radius of the ellipse</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 324
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="strokeLine"><span class="type-signature">&lt;static> </span>strokeLine<span class="signature">(startX, startY, endX, endY)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Stroke a line of the given two points
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>startX</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the start x coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>startY</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the start y coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>endX</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the end x coordinate</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>endY</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the end y coordinate</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 358
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="strokePolygon"><span class="type-signature">&lt;static> </span>strokePolygon<span class="signature">(poly)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Strokes a me.Polygon on the screen with a specified color
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>poly</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Polygon.html">me.Polygon</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the shape to draw</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 375
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="strokeRect"><span class="type-signature">&lt;static> </span>strokeRect<span class="signature">(x, y, width, height)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Stroke a rectangle at the specified coordinates with a given color
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 397
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="translate"><span class="type-signature">&lt;static> </span>translate<span class="signature">(x, y)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Translates the context to the given position
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    canvas_renderer.js, line 468
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Copyright &copy; 2011 - 2015, Olivier Biot, Jason Oster, Aaron McLeod
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2015-07-09T15:03:40+08:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a> modified by <a href="https://github.com/codename-">codename-</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				onHighlight : function ( el ) {
+					$(".toc-target").removeClass("toc-active");
+					$(location.hash).siblings(".toc-target").addClass("toc-active");
+				}
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

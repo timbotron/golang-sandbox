@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>melonJS Classes</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html"><img src="images/melon.png" height="30" ></a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="external-Array.html">Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Error.html">Error</a>
+						</li>
+						
+						<li>
+							<a href="external-Event.html">Event</a>
+						</li>
+						
+						<li>
+							<a href="external-Float32Array.html">Float32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Function.html">Function</a>
+						</li>
+						
+						<li>
+							<a href="external-Number.html">Number</a>
+						</li>
+						
+						<li>
+							<a href="external-Object.html">Object</a>
+						</li>
+						
+						<li>
+							<a href="external-String.html">String</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint8Array.html">Uint8Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint16Array.html">Uint16Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint32Array.html">Uint32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-window.html">window</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.html">me</a>
+						</li>
+						
+						<li>
+							<a href="me.agent.html">me.agent</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.html">me.audio</a>
+						</li>
+						
+						<li>
+							<a href="me.collision.html">me.collision</a>
+						</li>
+						
+						<li>
+							<a href="me.device.html">me.device</a>
+						</li>
+						
+						<li>
+							<a href="me.event.html">me.event</a>
+						</li>
+						
+						<li>
+							<a href="me.game.html">me.game</a>
+						</li>
+						
+						<li>
+							<a href="me.input.html">me.input</a>
+						</li>
+						
+						<li>
+							<a href="me.levelDirector.html">me.levelDirector</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.html">me.loader</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.html">me.plugin</a>
+						</li>
+						
+						<li>
+							<a href="me.pool.html">me.pool</a>
+						</li>
+						
+						<li>
+							<a href="me.save.html">me.save</a>
+						</li>
+						
+						<li>
+							<a href="me.state.html">me.state</a>
+						</li>
+						
+						<li>
+							<a href="me.sys.html">me.sys</a>
+						</li>
+						
+						<li>
+							<a href="me.timer.html">me.timer</a>
+						</li>
+						
+						<li>
+							<a href="me.utils.html">me.utils</a>
+						</li>
+						
+						<li>
+							<a href="me.video.html">me.video</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.AnimationSheet.html">me.AnimationSheet</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.Error.html">me.audio.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.BitmapFont.html">me.BitmapFont</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.html">me.Body</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.Error.html">me.Body.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.CanvasRenderer.html">me.CanvasRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.CollectableEntity.html">me.CollectableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.html">me.Color</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.Error.html">me.Color.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.ColorLayer.html">me.ColorLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.html">me.Container</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.Error.html">me.Container.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.DraggableEntity.html">me.DraggableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.DroptargetEntity.html">me.DroptargetEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Ellipse.html">me.Ellipse</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.html">me.Entity</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.Error.html">me.Entity.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Error.html">me.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Font.html">me.Font</a>
+						</li>
+						
+						<li>
+							<a href="me.GUI_Object.html">me.GUI_Object</a>
+						</li>
+						
+						<li>
+							<a href="me.ImageLayer.html">me.ImageLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.LevelEntity.html">me.LevelEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.html">me.Line</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.Error.html">me.Line.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.Error.html">me.loader.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Matrix2d.html">me.Matrix2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.Error.html">me.ObservableVector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Particle.html">me.Particle</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleContainer.html">me.ParticleContainer</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitter.html">me.ParticleEmitter</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitterSettings.html">me.ParticleEmitterSettings</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.Base.html">me.plugin.Base</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.html">me.Polygon</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.Error.html">me.Polygon.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.QuadTree.html">me.QuadTree</a>
+						</li>
+						
+						<li>
+							<a href="me.Rect.html">me.Rect</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.html">me.Renderable</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.Error.html">me.Renderable.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderer.html">me.Renderer</a>
+						</li>
+						
+						<li>
+							<a href="me.ScreenObject.html">me.ScreenObject</a>
+						</li>
+						
+						<li>
+							<a href="me.Sprite.html">me.Sprite</a>
+						</li>
+						
+						<li>
+							<a href="me.Tile.html">me.Tile</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXLayer.html">me.TMXLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObject.html">me.TMXObject</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObjectGroup.html">me.TMXObjectGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileMap.html">me.TMXTileMap</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.html">me.TMXTileset</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.Error.html">me.TMXTileset.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTilesetGroup.html">me.TMXTilesetGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.html">me.Tween</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.Error.html">me.Tween.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.html">me.Vector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.Error.html">me.Vector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.Error.html">me.video.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.html">me.video.renderer.Texture</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.Error.html">me.video.renderer.Texture.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Viewport.html">me.Viewport</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.html">me.WebGLRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.Compositor.html">me.WebGLRenderer.Compositor</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Classes</h1>
+<section>
+
+<header>
+    <h2>
+    
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+
+        
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="me.AnimationSheet.html">AnimationSheet</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.audio.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.BitmapFont.html">BitmapFont</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Body.html">Body</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Body.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.CanvasRenderer.html">CanvasRenderer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.CollectableEntity.html">CollectableEntity</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Color.html">Color</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Color.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ColorLayer.html">ColorLayer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Container.html">Container</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Container.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.DraggableEntity.html">DraggableEntity</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.DroptargetEntity.html">DroptargetEntity</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Ellipse.html">Ellipse</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Entity.html">Entity</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Entity.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Font.html">Font</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.GUI_Object.html">GUI_Object</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ImageLayer.html">ImageLayer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.LevelEntity.html">LevelEntity</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Line.html">Line</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Line.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.loader.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Matrix2d.html">Matrix2d</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ObservableVector2d.html">ObservableVector2d</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ObservableVector2d.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Particle.html">Particle</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ParticleContainer.html">ParticleContainer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ParticleEmitter.html">ParticleEmitter</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ParticleEmitterSettings.html">ParticleEmitterSettings</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.plugin.Base.html">plugin.Base</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Polygon.html">Polygon</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Polygon.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.QuadTree.html">QuadTree</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Rect.html">Rect</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Renderable.html">Renderable</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Renderable.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Renderer.html">Renderer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.ScreenObject.html">ScreenObject</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Sprite.html">Sprite</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Tile.html">Tile</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXLayer.html">TMXLayer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXObject.html">TMXObject</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXObjectGroup.html">TMXObjectGroup</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXTileMap.html">TMXTileMap</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXTileset.html">TMXTileset</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXTileset.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.TMXTilesetGroup.html">TMXTilesetGroup</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Tween.html">Tween</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Tween.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Vector2d.html">Vector2d</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Vector2d.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.video.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.video.renderer.Texture.html">Texture</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.video.renderer.Texture.Error.html">Error</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.Viewport.html">Viewport</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.WebGLRenderer.html">WebGLRenderer</a></dt>
+            <dd></dd>
+        
+            <dt><a href="me.WebGLRenderer.Compositor.html">Compositor</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Namespaces</h3>
+
+        <dl>
+            <dt><a href="namespaces.html#me"><a href="me.html">me</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.agent"><a href="me.agent.html">agent</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.audio"><a href="me.audio.html">audio</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.collision"><a href="me.collision.html">collision</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.device"><a href="me.device.html">device</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.event"><a href="me.event.html">event</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.game"><a href="me.game.html">game</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.input"><a href="me.input.html">input</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.levelDirector"><a href="me.levelDirector.html">levelDirector</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.loader"><a href="me.loader.html">loader</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.plugin"><a href="me.plugin.html">plugin</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.pool"><a href="me.pool.html">pool</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.save"><a href="me.save.html">save</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.state"><a href="me.state.html">state</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.sys"><a href="me.sys.html">sys</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.timer"><a href="me.timer.html">timer</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.utils"><a href="me.utils.html">utils</a></a></dt>
+            <dd></dd>
+        
+            <dt><a href="namespaces.html#me.video"><a href="me.video.html">video</a></a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Copyright &copy; 2011 - 2015, Olivier Biot, Jason Oster, Aaron McLeod
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2015-07-09T15:03:36+08:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a> modified by <a href="https://github.com/codename-">codename-</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				onHighlight : function ( el ) {
+					$(".toc-target").removeClass("toc-active");
+					$(location.hash).siblings(".toc-target").addClass("toc-active");
+				}
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

@@ -1,0 +1,2821 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>melonJS Namespace: input</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html"><img src="images/melon.png" height="30" ></a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="external-Array.html">Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Error.html">Error</a>
+						</li>
+						
+						<li>
+							<a href="external-Event.html">Event</a>
+						</li>
+						
+						<li>
+							<a href="external-Float32Array.html">Float32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Function.html">Function</a>
+						</li>
+						
+						<li>
+							<a href="external-Number.html">Number</a>
+						</li>
+						
+						<li>
+							<a href="external-Object.html">Object</a>
+						</li>
+						
+						<li>
+							<a href="external-String.html">String</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint8Array.html">Uint8Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint16Array.html">Uint16Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint32Array.html">Uint32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-window.html">window</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.html">me</a>
+						</li>
+						
+						<li>
+							<a href="me.agent.html">me.agent</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.html">me.audio</a>
+						</li>
+						
+						<li>
+							<a href="me.collision.html">me.collision</a>
+						</li>
+						
+						<li>
+							<a href="me.device.html">me.device</a>
+						</li>
+						
+						<li>
+							<a href="me.event.html">me.event</a>
+						</li>
+						
+						<li>
+							<a href="me.game.html">me.game</a>
+						</li>
+						
+						<li>
+							<a href="me.input.html">me.input</a>
+						</li>
+						
+						<li>
+							<a href="me.levelDirector.html">me.levelDirector</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.html">me.loader</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.html">me.plugin</a>
+						</li>
+						
+						<li>
+							<a href="me.pool.html">me.pool</a>
+						</li>
+						
+						<li>
+							<a href="me.save.html">me.save</a>
+						</li>
+						
+						<li>
+							<a href="me.state.html">me.state</a>
+						</li>
+						
+						<li>
+							<a href="me.sys.html">me.sys</a>
+						</li>
+						
+						<li>
+							<a href="me.timer.html">me.timer</a>
+						</li>
+						
+						<li>
+							<a href="me.utils.html">me.utils</a>
+						</li>
+						
+						<li>
+							<a href="me.video.html">me.video</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.AnimationSheet.html">me.AnimationSheet</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.Error.html">me.audio.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.BitmapFont.html">me.BitmapFont</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.html">me.Body</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.Error.html">me.Body.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.CanvasRenderer.html">me.CanvasRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.CollectableEntity.html">me.CollectableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.html">me.Color</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.Error.html">me.Color.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.ColorLayer.html">me.ColorLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.html">me.Container</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.Error.html">me.Container.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.DraggableEntity.html">me.DraggableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.DroptargetEntity.html">me.DroptargetEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Ellipse.html">me.Ellipse</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.html">me.Entity</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.Error.html">me.Entity.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Error.html">me.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Font.html">me.Font</a>
+						</li>
+						
+						<li>
+							<a href="me.GUI_Object.html">me.GUI_Object</a>
+						</li>
+						
+						<li>
+							<a href="me.ImageLayer.html">me.ImageLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.LevelEntity.html">me.LevelEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.html">me.Line</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.Error.html">me.Line.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.Error.html">me.loader.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Matrix2d.html">me.Matrix2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.Error.html">me.ObservableVector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Particle.html">me.Particle</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleContainer.html">me.ParticleContainer</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitter.html">me.ParticleEmitter</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitterSettings.html">me.ParticleEmitterSettings</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.Base.html">me.plugin.Base</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.html">me.Polygon</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.Error.html">me.Polygon.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.QuadTree.html">me.QuadTree</a>
+						</li>
+						
+						<li>
+							<a href="me.Rect.html">me.Rect</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.html">me.Renderable</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.Error.html">me.Renderable.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderer.html">me.Renderer</a>
+						</li>
+						
+						<li>
+							<a href="me.ScreenObject.html">me.ScreenObject</a>
+						</li>
+						
+						<li>
+							<a href="me.Sprite.html">me.Sprite</a>
+						</li>
+						
+						<li>
+							<a href="me.Tile.html">me.Tile</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXLayer.html">me.TMXLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObject.html">me.TMXObject</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObjectGroup.html">me.TMXObjectGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileMap.html">me.TMXTileMap</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.html">me.TMXTileset</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.Error.html">me.TMXTileset.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTilesetGroup.html">me.TMXTilesetGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.html">me.Tween</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.Error.html">me.Tween.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.html">me.Vector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.Error.html">me.Vector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.Error.html">me.video.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.html">me.video.renderer.Texture</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.Error.html">me.video.renderer.Texture.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Viewport.html">me.Viewport</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.html">me.WebGLRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.Compositor.html">me.WebGLRenderer.Compositor</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Namespace: input</h1>
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="me.html">me</a>.</span>
+    
+    input
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+
+        
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    input.js, line 8
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name toc-target" id="KEY"><span class="type-signature">&lt;static> </span>KEY<span class="type-signature"> :number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Almost all keyboard keys that have ASCII code, like:LEFT, UP, RIGHT, DOWN, ENTER, SHIFT, CTRL, ALT, ESC, SPACE, TAB, BACKSPACE, PAUSE,PAGE_UP, PAGE_DOWN, INSERT, DELETE, CAPS_LOCK, NUM_LOCK, SCROLL_LOCK, PRINT_SCREEN,Keys [0..9], [A..Z], [NUMPAD0..NUMPAD9], [F1..F12]
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 119
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="mouse"><span class="type-signature">&lt;static> </span>mouse<span class="type-signature"> :<a href="Object.html">Object</a></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Mouse information<br>properties : <br>pos (me.Vector2d) : pointer position (in screen coordinates) <br>LEFT : constant for left button <br>MIDDLE : constant for middle button <br>RIGHT : constant for right button <br>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 479
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="preventDefault"><span class="type-signature">&lt;static> </span>preventDefault<span class="type-signature"> :Boolean</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Global flag to specify if melonJS should prevent default browser action on registered key events <br>This is also configurable per key through the bindKey functiondefault : true
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Boolean</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    input.js, line 45
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="throttlingInterval"><span class="type-signature">&lt;static> </span>throttlingInterval<span class="type-signature"> :Number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        time interval for event throttling in milliseconds<br>default value : "1000/me.sys.fps" ms<br>set to 0 ms to disable the feature
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 504
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name toc-target" id="_translatePointerEvents"><span class="type-signature">&lt;private, static> </span>_translatePointerEvents<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Will translate global (frequently used) pointer eventswhich should be catched at root level, into minipubsub system events
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 683
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="bindKey"><span class="type-signature">&lt;static> </span>bindKey<span class="signature">(keycode, action, <span class="optional">lock</span>, <span class="optional">preventDefault</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        associate a user defined action to a keycode
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>keycode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">me.input#KEY</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">user defined corresponding action</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>lock</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">cancel the keypress event once read</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>preventDefault</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    me.input.preventDefault
+                
+                </td>
+            
+
+            <td class="description last">prevent default browser action</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 298
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; enable the keyboardme.input.bindKey(me.input.KEY.LEFT,  &quot;left&quot;);me.input.bindKey(me.input.KEY.RIGHT, &quot;right&quot;);me.input.bindKey(me.input.KEY.X,     &quot;jump&quot;, true);me.input.bindKey(me.input.KEY.F1,    &quot;options&quot;, true, true);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="bindPointer"><span class="type-signature">&lt;static> </span>bindPointer<span class="signature">(<span class="optional">button</span>, keyCode)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Associate a pointer event to a keycode<br>Left button – 0Middle button – 1Right button – 2
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>button</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    me.input.mouse.LEFT
+                
+                </td>
+            
+
+            <td class="description last">(accordingly to W3C values : 0,1,2 for left, middle and right buttons)</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>keyCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">me.input#KEY</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 545
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; enable the keyboardme.input.bindKey(me.input.KEY.X, &quot;shoot&quot;);&#x2F;&#x2F; map the left button click on the X key (default if the button is not specified)me.input.bindPointer(me.input.KEY.X);&#x2F;&#x2F; map the right button click on the X keyme.input.bindPointer(me.input.mouse.RIGHT, me.input.KEY.X);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="globalToLocal"><span class="type-signature">&lt;static> </span>globalToLocal<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {<a href="me.Vector2d.html">me.Vector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Translate the specified x and y values from the global (absolute)coordinate to local (viewport) relative coordinate.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the global x coordinate to be translated.</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the global y coordinate to be translated.</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 515
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    A vector object with the corresponding translated coordinates.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.Vector2d.html">me.Vector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">onMouseEvent : function (e) {   &#x2F;&#x2F; convert the given into local (viewport) relative coordinates   var pos = me.input.globalToLocal(e.clientX, e,clientY);   &#x2F;&#x2F; do something with pos !};</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="isKeyPressed"><span class="type-signature">&lt;static> </span>isKeyPressed<span class="signature">(action)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the key press status of the specified action
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">user defined corresponding action</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 232
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    true if pressed
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">if (me.input.isKeyPressed(&#x27;left&#x27;)){   &#x2F;&#x2F;do something}else if (me.input.isKeyPressed(&#x27;right&#x27;)){   &#x2F;&#x2F;do something else...}</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="keyStatus"><span class="type-signature">&lt;static> </span>keyStatus<span class="signature">(action)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the key status of the specified action
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">user defined corresponding action</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 261
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    down (true) or up(false)
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="registerPointerEvent"><span class="type-signature">&lt;static> </span>registerPointerEvent<span class="signature">(eventType, region, callback)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        allows registration of event listeners on the object target. <br>melonJS defines the additional `gameX` and `gameY` properties when passing the Event object to the defined callback (see below)<br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The event type for which the object is registering <br>melonJS currently support <b>['pointermove','pointerdown','pointerup','mousewheel']</b></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>region</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Rect.html">me.Rect</a></span>
+|
+
+<span class="param-type"><a href="me.Polygon.html">me.Polygon</a></span>
+|
+
+<span class="param-type"><a href="me.Line.html">me.Line</a></span>
+|
+
+<span class="param-type"><a href="me.Ellipse.html">me.Ellipse</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">a shape representing the region to register on</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">methods to be called when the event occurs.</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 597
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="external-Event.html">external:Event</a></li>
+			
+			<li><a href="http://www.w3.org/TR/pointerevents/#list-of-pointer-events">W3C Pointer Event list</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; register on the &#x27;pointerdown&#x27; eventme.input.registerPointerEvent(&#x27;pointerdown&#x27;, this, this.pointerDown.bind(this));</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="releasePointerEvent"><span class="type-signature">&lt;static> </span>releasePointerEvent<span class="signature">(eventType, region, <span class="optional">callback</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        allows the removal of event listeners from the object target.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The event type for which the object was registered <br>melonJS currently support <b>['pointermove','pointerdown','pointerup','mousewheel']</b></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>region</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.Rect.html">me.Rect</a></span>
+|
+
+<span class="param-type"><a href="me.Polygon.html">me.Polygon</a></span>
+|
+
+<span class="param-type"><a href="me.Line.html">me.Line</a></span>
+|
+
+<span class="param-type"><a href="me.Ellipse.html">me.Ellipse</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">the registered region to release for this event</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "all"
+                
+                </td>
+            
+
+            <td class="description last">if specified unregister the event only for the specific callback</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 647
+	</dd>
+	
+
+	
+
+	
+	<dt class="tag-see">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="http://www.w3.org/TR/pointerevents/#list-of-pointer-events">W3C Pointer Event list</a></li>
+			</ul>
+	</dd>
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; release the registered region on the &#x27;pointerdown&#x27; eventme.input.releasePointerEvent(&#x27;pointerdown&#x27;, this);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="triggerKeyEvent"><span class="type-signature">&lt;static> </span>triggerKeyEvent<span class="signature">(keycode, true)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        trigger the specified key (simulated) event <br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>keycode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">me.input#KEY</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>true</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">to trigger a key press, or false for key release</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 275
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; trigger a key pressme.input.triggerKeyEvent(me.input.KEY.LEFT, true);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="unbindKey"><span class="type-signature">&lt;static> </span>unbindKey<span class="signature">(keycode)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unbind the defined keycode
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>keycode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">me.input#KEY</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 349
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">me.input.unbindKey(me.input.KEY.LEFT);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="unbindPointer"><span class="type-signature">&lt;static> </span>unbindPointer<span class="signature">(<span class="optional">button</span>)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unbind the defined keycode
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>button</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    me.input.mouse.LEFT
+                
+                </td>
+            
+
+            <td class="description last">(accordingly to W3C values : 0,1,2 for left, middle and right buttons)</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    pointer.js, line 578
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">me.input.unbindPointer(me.input.mouse.LEFT);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="unlockKey"><span class="type-signature">&lt;static> </span>unlockKey<span class="signature">(action)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unlock a key manually
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>action</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">user defined corresponding action</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    keyboard.js, line 332
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; Unlock jump when touching the groundif (!this.falling &amp;&amp; !this.jumping) {    me.input.unlockKey(&quot;jump&quot;);}</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Copyright &copy; 2011 - 2015, Olivier Biot, Jason Oster, Aaron McLeod
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2015-07-09T15:03:43+08:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a> modified by <a href="https://github.com/codename-">codename-</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				onHighlight : function ( el ) {
+					$(".toc-target").removeClass("toc-active");
+					$(location.hash).siblings(".toc-target").addClass("toc-active");
+				}
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

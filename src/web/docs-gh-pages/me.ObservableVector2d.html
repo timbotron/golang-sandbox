@@ -1,0 +1,4726 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>melonJS Class: ObservableVector2d</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html"><img src="images/melon.png" height="30" ></a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="external-Array.html">Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Error.html">Error</a>
+						</li>
+						
+						<li>
+							<a href="external-Event.html">Event</a>
+						</li>
+						
+						<li>
+							<a href="external-Float32Array.html">Float32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Function.html">Function</a>
+						</li>
+						
+						<li>
+							<a href="external-Number.html">Number</a>
+						</li>
+						
+						<li>
+							<a href="external-Object.html">Object</a>
+						</li>
+						
+						<li>
+							<a href="external-String.html">String</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint8Array.html">Uint8Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint16Array.html">Uint16Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint32Array.html">Uint32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-window.html">window</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.html">me</a>
+						</li>
+						
+						<li>
+							<a href="me.agent.html">me.agent</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.html">me.audio</a>
+						</li>
+						
+						<li>
+							<a href="me.collision.html">me.collision</a>
+						</li>
+						
+						<li>
+							<a href="me.device.html">me.device</a>
+						</li>
+						
+						<li>
+							<a href="me.event.html">me.event</a>
+						</li>
+						
+						<li>
+							<a href="me.game.html">me.game</a>
+						</li>
+						
+						<li>
+							<a href="me.input.html">me.input</a>
+						</li>
+						
+						<li>
+							<a href="me.levelDirector.html">me.levelDirector</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.html">me.loader</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.html">me.plugin</a>
+						</li>
+						
+						<li>
+							<a href="me.pool.html">me.pool</a>
+						</li>
+						
+						<li>
+							<a href="me.save.html">me.save</a>
+						</li>
+						
+						<li>
+							<a href="me.state.html">me.state</a>
+						</li>
+						
+						<li>
+							<a href="me.sys.html">me.sys</a>
+						</li>
+						
+						<li>
+							<a href="me.timer.html">me.timer</a>
+						</li>
+						
+						<li>
+							<a href="me.utils.html">me.utils</a>
+						</li>
+						
+						<li>
+							<a href="me.video.html">me.video</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.AnimationSheet.html">me.AnimationSheet</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.Error.html">me.audio.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.BitmapFont.html">me.BitmapFont</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.html">me.Body</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.Error.html">me.Body.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.CanvasRenderer.html">me.CanvasRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.CollectableEntity.html">me.CollectableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.html">me.Color</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.Error.html">me.Color.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.ColorLayer.html">me.ColorLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.html">me.Container</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.Error.html">me.Container.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.DraggableEntity.html">me.DraggableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.DroptargetEntity.html">me.DroptargetEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Ellipse.html">me.Ellipse</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.html">me.Entity</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.Error.html">me.Entity.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Error.html">me.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Font.html">me.Font</a>
+						</li>
+						
+						<li>
+							<a href="me.GUI_Object.html">me.GUI_Object</a>
+						</li>
+						
+						<li>
+							<a href="me.ImageLayer.html">me.ImageLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.LevelEntity.html">me.LevelEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.html">me.Line</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.Error.html">me.Line.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.Error.html">me.loader.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Matrix2d.html">me.Matrix2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.Error.html">me.ObservableVector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Particle.html">me.Particle</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleContainer.html">me.ParticleContainer</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitter.html">me.ParticleEmitter</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitterSettings.html">me.ParticleEmitterSettings</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.Base.html">me.plugin.Base</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.html">me.Polygon</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.Error.html">me.Polygon.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.QuadTree.html">me.QuadTree</a>
+						</li>
+						
+						<li>
+							<a href="me.Rect.html">me.Rect</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.html">me.Renderable</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.Error.html">me.Renderable.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderer.html">me.Renderer</a>
+						</li>
+						
+						<li>
+							<a href="me.ScreenObject.html">me.ScreenObject</a>
+						</li>
+						
+						<li>
+							<a href="me.Sprite.html">me.Sprite</a>
+						</li>
+						
+						<li>
+							<a href="me.Tile.html">me.Tile</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXLayer.html">me.TMXLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObject.html">me.TMXObject</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObjectGroup.html">me.TMXObjectGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileMap.html">me.TMXTileMap</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.html">me.TMXTileset</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.Error.html">me.TMXTileset.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTilesetGroup.html">me.TMXTilesetGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.html">me.Tween</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.Error.html">me.Tween.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.html">me.Vector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.Error.html">me.Vector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.Error.html">me.video.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.html">me.video.renderer.Texture</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.Error.html">me.video.renderer.Texture.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Viewport.html">me.Viewport</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.html">me.WebGLRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.Compositor.html">me.WebGLRenderer.Compositor</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Class: ObservableVector2d</h1>
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="me.html">me</a>.</span>
+    
+    ObservableVector2d
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+<dt>
+    <h4 class="name toc-target" id="ObservableVector2d"><span class="type-signature"></span>new ObservableVector2d<span class="signature">(<span class="optional">x</span>, <span class="optional">y</span>, settings)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        A Vector2d object that provide notification by executing the given callback when the vector is changed.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">x value of the vector</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">y value of the vector</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">additional required parameters
+                <h6>Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>onUpdate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the callback to be executed when the vector is changed</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+            </td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 18
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        <ul>
+            <li><a href="me.Vector2d.html">me.Vector2d</a></li>
+        </ul>
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="me.ObservableVector2d.Error.html">Error</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name toc-target" id="x"><span class="type-signature">&lt;static> </span>x<span class="type-signature"> :Number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        x value of the vector
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 23
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="y"><span class="type-signature">&lt;static> </span>y<span class="type-signature"> :Number</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        y value of the vector
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Number</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 41
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name toc-target" id="abs"><span class="type-signature">&lt;static> </span>abs<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Update this vector values to absolute values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 139
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="add"><span class="type-signature">&lt;static> </span>add<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Add the passed vector to this vector
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 78
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="angle"><span class="type-signature">&lt;static> </span>angle<span class="signature">(v)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the angle between this vector and the passed one
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 366
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    angle in radians
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="ceil"><span class="type-signature">&lt;static> </span>ceil<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Ceil the vector values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 222
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    new me.ObservableVector2d
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="ceilSelf"><span class="type-signature">&lt;static> </span>ceilSelf<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Ceil this vector values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 233
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="clamp"><span class="type-signature">&lt;static> </span>clamp<span class="signature">(low, high)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clamp the vector value within the specified value range
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>low</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>high</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 150
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    new me.ObservableVector2d
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="clampSelf"><span class="type-signature">&lt;static> </span>clampSelf<span class="signature">(low, high)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Clamp this vector value within the specified value range
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>low</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>high</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 163
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="clone"><span class="type-signature">&lt;static> </span>clone<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return a clone copy of this vector
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 409
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    new me.ObservableVector2d
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="copy"><span class="type-signature">&lt;static> </span>copy<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Copy the x,y values of the passed vector to this one
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 266
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="distance"><span class="type-signature">&lt;static> </span>distance<span class="signature">(v)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the distance between this vector and the passed one
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 354
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="div"><span class="type-signature">&lt;static> </span>div<span class="signature">(value)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Divide this vector values by the passed value
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 127
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="dotProduct"><span class="type-signature">&lt;static> </span>dotProduct<span class="signature">(v)</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the dot product of this vector and the passed one
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 342
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The dot product.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="equals"><span class="type-signature">&lt;static> </span>equals<span class="signature">(v)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return true if the two vectors are the same
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 278
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="floor"><span class="type-signature">&lt;static> </span>floor<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Floor the vector values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 200
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    new me.ObservableVector2d
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="floorSelf"><span class="type-signature">&lt;static> </span>floorSelf<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Floor this vector values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 211
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="maxV"><span class="type-signature">&lt;static> </span>maxV<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Update this vector with the maximum value between this and the passed vector
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 188
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="minV"><span class="type-signature">&lt;static> </span>minV<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Update this vector with the minimum value between this and the passed vector
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 176
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="negate"><span class="type-signature">&lt;static> </span>negate<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Negate the vector values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 244
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    new me.ObservableVector2d
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="negateSelf"><span class="type-signature">&lt;static> </span>negateSelf<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Negate this vector values
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 255
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="normalize"><span class="type-signature">&lt;static> </span>normalize<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        normalize this vector (scale the vector so that its magnitude is 1)
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 290
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="perp"><span class="type-signature">&lt;static> </span>perp<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        change this vector to be perpendicular to what it was before.<br>(Effectively rotates it 90 degrees in a clockwise direction)
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 305
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="reflect"><span class="type-signature">&lt;static> </span>reflect<span class="signature">(axis)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Reflect this vector on an arbitrary axis.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>axis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The vector representing the axis.</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 378
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="reflectN"><span class="type-signature">&lt;static> </span>reflectN<span class="signature">(axis)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Reflect this vector on an arbitrary axis (represented by a unit vector) <br>This is slightly more efficient than `reflect` when dealing with unit vectors.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>axis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The vector representing the axis.</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 393
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining.
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="reverse"><span class="type-signature">&lt;static> </span>reverse<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Reverse this vector.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 331
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="rotate"><span class="type-signature">&lt;static> </span>rotate<span class="signature">(angle)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Rotate this vector (counter-clockwise) by the specified angle (in radians).
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>angle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The angle to rotate (in radians)</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 317
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="scale"><span class="type-signature">&lt;static> </span>scale<span class="signature">(x, <span class="optional">y</span>)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Multiply this vector values by the given scalar
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+		<th>Argument</th>
+		
+
+		
+		<th>Default</th>
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    x
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 102
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="scaleV"><span class="type-signature">&lt;static> </span>scaleV<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Multiply this vector values by the passed vector
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 115
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="sub"><span class="type-signature">&lt;static> </span>sub<span class="signature">(v)</span><span class="type-signature"> &rarr; {<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Substract the passed vector to this vector
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>v</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 90
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Reference to this object for method chaining
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.ObservableVector2d.html">me.ObservableVector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="toString"><span class="type-signature">&lt;static> </span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {String}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        convert the object to a string representation
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 432
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">String</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="toVector2d"><span class="type-signature">&lt;static> </span>toVector2d<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="me.Vector2d.html">me.Vector2d</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return a `me.Vector2d` copy of this `me.ObservableVector2d` object
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    observable_vector.js, line 421
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    new me.Vector2d
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="me.Vector2d.html">me.Vector2d</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Copyright &copy; 2011 - 2015, Olivier Biot, Jason Oster, Aaron McLeod
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2015-07-09T15:03:45+08:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a> modified by <a href="https://github.com/codename-">codename-</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				onHighlight : function ( el ) {
+					$(".toc-target").removeClass("toc-active");
+					$(location.hash).siblings(".toc-target").addClass("toc-active");
+				}
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

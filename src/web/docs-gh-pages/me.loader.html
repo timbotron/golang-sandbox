@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>melonJS Namespace: loader</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.simplex.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top ">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html"><img src="images/melon.png" height="30" ></a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="externals.list.html" class="dropdown-toggle" data-toggle="dropdown">Externals<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="external-Array.html">Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Error.html">Error</a>
+						</li>
+						
+						<li>
+							<a href="external-Event.html">Event</a>
+						</li>
+						
+						<li>
+							<a href="external-Float32Array.html">Float32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Function.html">Function</a>
+						</li>
+						
+						<li>
+							<a href="external-Number.html">Number</a>
+						</li>
+						
+						<li>
+							<a href="external-Object.html">Object</a>
+						</li>
+						
+						<li>
+							<a href="external-String.html">String</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint8Array.html">Uint8Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint16Array.html">Uint16Array</a>
+						</li>
+						
+						<li>
+							<a href="external-Uint32Array.html">Uint32Array</a>
+						</li>
+						
+						<li>
+							<a href="external-window.html">window</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.html">me</a>
+						</li>
+						
+						<li>
+							<a href="me.agent.html">me.agent</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.html">me.audio</a>
+						</li>
+						
+						<li>
+							<a href="me.collision.html">me.collision</a>
+						</li>
+						
+						<li>
+							<a href="me.device.html">me.device</a>
+						</li>
+						
+						<li>
+							<a href="me.event.html">me.event</a>
+						</li>
+						
+						<li>
+							<a href="me.game.html">me.game</a>
+						</li>
+						
+						<li>
+							<a href="me.input.html">me.input</a>
+						</li>
+						
+						<li>
+							<a href="me.levelDirector.html">me.levelDirector</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.html">me.loader</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.html">me.plugin</a>
+						</li>
+						
+						<li>
+							<a href="me.pool.html">me.pool</a>
+						</li>
+						
+						<li>
+							<a href="me.save.html">me.save</a>
+						</li>
+						
+						<li>
+							<a href="me.state.html">me.state</a>
+						</li>
+						
+						<li>
+							<a href="me.sys.html">me.sys</a>
+						</li>
+						
+						<li>
+							<a href="me.timer.html">me.timer</a>
+						</li>
+						
+						<li>
+							<a href="me.utils.html">me.utils</a>
+						</li>
+						
+						<li>
+							<a href="me.video.html">me.video</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="me.AnimationSheet.html">me.AnimationSheet</a>
+						</li>
+						
+						<li>
+							<a href="me.audio.Error.html">me.audio.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.BitmapFont.html">me.BitmapFont</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.html">me.Body</a>
+						</li>
+						
+						<li>
+							<a href="me.Body.Error.html">me.Body.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.CanvasRenderer.html">me.CanvasRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.CollectableEntity.html">me.CollectableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.html">me.Color</a>
+						</li>
+						
+						<li>
+							<a href="me.Color.Error.html">me.Color.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.ColorLayer.html">me.ColorLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.html">me.Container</a>
+						</li>
+						
+						<li>
+							<a href="me.Container.Error.html">me.Container.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.DraggableEntity.html">me.DraggableEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.DroptargetEntity.html">me.DroptargetEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Ellipse.html">me.Ellipse</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.html">me.Entity</a>
+						</li>
+						
+						<li>
+							<a href="me.Entity.Error.html">me.Entity.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Error.html">me.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Font.html">me.Font</a>
+						</li>
+						
+						<li>
+							<a href="me.GUI_Object.html">me.GUI_Object</a>
+						</li>
+						
+						<li>
+							<a href="me.ImageLayer.html">me.ImageLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.LevelEntity.html">me.LevelEntity</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.html">me.Line</a>
+						</li>
+						
+						<li>
+							<a href="me.Line.Error.html">me.Line.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.loader.Error.html">me.loader.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Matrix2d.html">me.Matrix2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.html">me.ObservableVector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.ObservableVector2d.Error.html">me.ObservableVector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Particle.html">me.Particle</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleContainer.html">me.ParticleContainer</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitter.html">me.ParticleEmitter</a>
+						</li>
+						
+						<li>
+							<a href="me.ParticleEmitterSettings.html">me.ParticleEmitterSettings</a>
+						</li>
+						
+						<li>
+							<a href="me.plugin.Base.html">me.plugin.Base</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.html">me.Polygon</a>
+						</li>
+						
+						<li>
+							<a href="me.Polygon.Error.html">me.Polygon.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.QuadTree.html">me.QuadTree</a>
+						</li>
+						
+						<li>
+							<a href="me.Rect.html">me.Rect</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.html">me.Renderable</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderable.Error.html">me.Renderable.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Renderer.html">me.Renderer</a>
+						</li>
+						
+						<li>
+							<a href="me.ScreenObject.html">me.ScreenObject</a>
+						</li>
+						
+						<li>
+							<a href="me.Sprite.html">me.Sprite</a>
+						</li>
+						
+						<li>
+							<a href="me.Tile.html">me.Tile</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXLayer.html">me.TMXLayer</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObject.html">me.TMXObject</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXObjectGroup.html">me.TMXObjectGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileMap.html">me.TMXTileMap</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.html">me.TMXTileset</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTileset.Error.html">me.TMXTileset.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.TMXTilesetGroup.html">me.TMXTilesetGroup</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.html">me.Tween</a>
+						</li>
+						
+						<li>
+							<a href="me.Tween.Error.html">me.Tween.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.html">me.Vector2d</a>
+						</li>
+						
+						<li>
+							<a href="me.Vector2d.Error.html">me.Vector2d.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.Error.html">me.video.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.html">me.video.renderer.Texture</a>
+						</li>
+						
+						<li>
+							<a href="me.video.renderer.Texture.Error.html">me.video.renderer.Texture.Error</a>
+						</li>
+						
+						<li>
+							<a href="me.Viewport.html">me.Viewport</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.html">me.WebGLRenderer</a>
+						</li>
+						
+						<li>
+							<a href="me.WebGLRenderer.Compositor.html">me.WebGLRenderer.Compositor</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Namespace: loader</h1>
+<section>
+
+<header>
+    <h2>
+        <span class="ancestors"><a href="me.html">me</a>.</span>
+    
+    loader
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+            <div class="description">a small class to manage loading of stuff and manage resourcesThere is no constructor function for me.input.</div>
+        
+
+        
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 8
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="me.loader.Error.html">Error</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<dt>
+    <h4 class="name toc-target" id="getBinary"><span class="type-signature">&lt;static> </span>getBinary<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="Object.html">Object</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the specified Binary object
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">of the binary object ("ymTrack");</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 578
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="getImage"><span class="type-signature">&lt;static> </span>getImage<span class="signature">(Image)</span><span class="type-signature"> &rarr; {Image}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the specified Image Object
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>Image</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of the Image element ("tileset-platformer");</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 600
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Image</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="getJSON"><span class="type-signature">&lt;static> </span>getJSON<span class="signature">(Name)</span><span class="type-signature"> &rarr; {<a href="Object.html">Object</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the specified JSON Object
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>Name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">for the json file to load</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 623
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="getLoadProgress"><span class="type-signature">&lt;static> </span>getLoadProgress<span class="signature">()</span><span class="type-signature"> &rarr; {Number}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Return the loading progress in percent
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+	<dt class="important tag-deprecated">Deprecated:</dt>
+	
+	<dd>
+		<ul class="dummy">
+			<li>use callback instead</li>
+		</ul>
+	</dd>
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 643
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Number</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="getTMX"><span class="type-signature">&lt;static> </span>getTMX<span class="signature">(tmx)</span><span class="type-signature"> &rarr; {XML|<a href="Object.html">Object</a>}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        return the specified TMX/TSX object
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>tmx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">name of the tmx/tsx element ("map1");</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 557
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">XML</span>
+|
+
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="load"><span class="type-signature">&lt;static> </span>load<span class="signature">(resource, onload, onerror)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Load a single resource (to be used if you need to load additional resource during the game)<br>Given parameter must contain the following fields :<br>- name    : internal name of the resource<br>- type    : "audio", binary", "image", "json", "tmx", "tsx"<br>each resource except type "tmx" must contain the following field :<br>- src     : path and file name of the resource<br>(!) for tmx :<br>- src     : path and file name of the resource<br>or<br>- data    : the json or xml object representation of the tmx file<br>- format  : "xml" or "json"<br>(!) for audio :<br>- src     : path (only) where resources are located<br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>resource</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>onload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">function to be called when the resource is loaded</td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>onerror</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">function to be called in case of error</td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 380
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; load an image assetme.loader.load({name: &quot;avatar&quot;,  type:&quot;image&quot;,  src: &quot;data&#x2F;avatar.png&quot;}, this.onload.bind(this), this.onerror.bind(this));&#x2F;&#x2F; start loading musicme.loader.load({    name   : &quot;bgmusic&quot;,    type   : &quot;audio&quot;,    src    : &quot;data&#x2F;audio&#x2F;&quot;}, function () {    me.audio.play(&quot;bgmusic&quot;);});</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="preload"><span class="type-signature">&lt;static> </span>preload<span class="signature">(resources)</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        set all the specified game resources to be preloaded.<br>each resource item must contain the following fields :<br>- name    : internal name of the resource<br>- type    : "binary", "image", "tmx", "tsx", "audio"<br>each resource except type "tmx" must contain the following field :<br>- src     : path and file name of the resource<br>(!) for tmx :<br>- src     : path and file name of the resource<br>or<br>- data    : the json or xml object representation of the tmx file<br>- format  : "xml" or "json"<br>(!) for audio :<br>- src     : path (only) where resources are located<br><br>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>resources</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object[]</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 322
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">var g_resources = [  &#x2F;&#x2F; PNG tileset  {name: &quot;tileset-platformer&quot;, type: &quot;image&quot;,  src: &quot;data&#x2F;map&#x2F;tileset.png&quot;},  &#x2F;&#x2F; PNG packed texture  {name: &quot;texture&quot;, type:&quot;image&quot;, src: &quot;data&#x2F;gfx&#x2F;texture.png&quot;}  &#x2F;&#x2F; TSX file  {name: &quot;meta_tiles&quot;, type: &quot;tsx&quot;, src: &quot;data&#x2F;map&#x2F;meta_tiles.tsx&quot;},  &#x2F;&#x2F; TMX level (XML &amp; JSON)  {name: &quot;map1&quot;, type: &quot;tmx&quot;, src: &quot;data&#x2F;map&#x2F;map1.json&quot;},  {name: &quot;map2&quot;, type: &quot;tmx&quot;, src: &quot;data&#x2F;map&#x2F;map2.tmx&quot;},  {name: &quot;map3&quot;, type: &quot;tmx&quot;, format: &quot;json&quot;, data: {&quot;height&quot;:15,&quot;layers&quot;:[...],&quot;tilewidth&quot;:32,&quot;version&quot;:1,&quot;width&quot;:20}},  {name: &quot;map4&quot;, type: &quot;tmx&quot;, format: &quot;xml&quot;, data: {xml representation of tmx}},  &#x2F;&#x2F; audio resources  {name: &quot;bgmusic&quot;, type: &quot;audio&quot;,  src: &quot;data&#x2F;audio&#x2F;&quot;},  {name: &quot;cling&quot;,   type: &quot;audio&quot;,  src: &quot;data&#x2F;audio&#x2F;&quot;},  &#x2F;&#x2F; binary file  {name: &quot;ymTrack&quot;, type: &quot;binary&quot;, src: &quot;data&#x2F;audio&#x2F;main.ym&quot;},  &#x2F;&#x2F; JSON file (used for texturePacker)  {name: &quot;texture&quot;, type: &quot;json&quot;, src: &quot;data&#x2F;gfx&#x2F;texture.json&quot;}];&#x2F;&#x2F; set all resources to be loadedme.loader.preload(g_resources);</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="unload"><span class="type-signature">&lt;static> </span>unload<span class="signature">(resource)</span><span class="type-signature"> &rarr; {Boolean}</span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unload specified resource to free memory
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>resource</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 445
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    true if unloaded
+</div>
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">Boolean</span>
+
+
+	</dd>
+</dl>
+
+
+        
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript"> me.loader.unload({name: &quot;avatar&quot;,  type:&quot;image&quot;,  src: &quot;data&#x2F;avatar.png&quot;});</pre>
+
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name toc-target" id="unloadAll"><span class="type-signature">&lt;static> </span>unloadAll<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        unload all resources to free memory
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 502
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript"> me.loader.unloadAll();</pre>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+
+        <dl>
+                
+<dt>
+    <h4 class="name toc-target" id="onload">onload</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        onload callback
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 245
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; set a callback when everything is loadedme.loader.onload = this.loaded.bind(this);</pre>
+
+
+    
+</dd>
+
+            
+                
+<dt>
+    <h4 class="name toc-target" id="onProgress">onProgress</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        onProgress callback<br>each time a resource is loaded, the loader will fire the specified function,giving the actual progress [0 ... 1], as argument, and an object describing the resource loaded
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source">
+    loader.js, line 259
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">&#x2F;&#x2F; set a callback for progress notificationme.loader.onProgress = this.updateProgress.bind(this);</pre>
+
+
+    
+</dd>
+
+            </dl>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		Copyright &copy; 2011 - 2015, Olivier Biot, Jason Oster, Aaron McLeod
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2015-07-09T15:03:44+08:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a> modified by <a href="https://github.com/codename-">codename-</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				onHighlight : function ( el ) {
+					$(".toc-target").removeClass("toc-active");
+					$(location.hash).siblings(".toc-target").addClass("toc-active");
+				}
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : false,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>
