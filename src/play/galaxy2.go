@@ -116,7 +116,6 @@ func born(config map[string]interface{}) bool {
 				newPin.SX = int16(xx)
 				newPin.SY = int16(yy)
 				newPin.C = genStar()
-				fmt.Println(newPin.C)
 				scratch[newPin.X][newPin.Y] = 1
 				starChart = append(starChart,newPin)
 
@@ -126,8 +125,8 @@ func born(config map[string]interface{}) bool {
 	}
 	fmt.Println("Last Sector: \n",scratch)
 	//fmt.Println("All Stars: ",starChart)
-	// starJSON, _ := json.Marshal(starChart)
-	// fmt.Printf("Star JSON: %s\n", starJSON)
+	starJSON, _ := json.Marshal(starChart)
+	fmt.Printf("Star JSON: %s\n", starJSON)
 	fmt.Println("Number of stars: ",len(starChart))
 	t1 := time.Now()
 	fmt.Printf("Galaxy birth took %v to run.\n", t1.Sub(t0))
