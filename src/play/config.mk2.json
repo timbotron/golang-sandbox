@@ -7,14 +7,25 @@
   "min_star_distance": 3,
   "ship_layouts": [
     {
-      "weapon_mounts_max": 3,
-      "class": "personal"
+      "class": "personal",
+      "external_mounts_max": 5,
+      "external_mounts_min": 0,
+      "internal_mounts_max": 5,
+      "internal_mounts_max": 1
     },
     {
-      "class": "frigate"
+      "class": "frigate",
+      "external_mounts_max": 10,
+      "external_mounts_min": 2,
+      "internal_mounts_max": 10,
+      "internal_mounts_max": 4
     },
     {
-      "class": "destroyer"
+      "class": "destroyer",
+      "external_mounts_max": 15,
+      "external_mounts_min": 3,
+      "internal_mounts_max": 15,
+      "internal_mounts_max": 5
     }
   ],
   "aliens": [
